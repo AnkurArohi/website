@@ -1,5 +1,6 @@
 .blink {
     border-right-style: solid;
+    border-top-width: 200px;
     animation: 1s blink infinity;
 
   }

@@ -18,6 +18,7 @@
   }
   h1,
   h2{
+    margin-top: 150px;
     font-weight: 400;
     font-size: 35px;
     font-weight: 400;
@@ -141,54 +142,26 @@
   <span #blinkElement class="text blink"></span>
   </h2>
   <input type="hidden" #selection>
-
 </div>
 <app-count-down> </app-count-down>
 <router-outlet></router-outlet>
 
-<div class="p" role="main">
-<h3 style="font-size: 25px; margin-top: 200px; margin-left: -50px;">Subscribe Now to Our Mailing List 
-  <span #textElement class="text"></span>
-</h3>
-</div>
-
-<mat-card style="font-size: 13px;line-height: 0px;letter-spacing: -0.2em;font-weight: 50;font-style: normal; appearance: none;">
+<mat-card class="mat-elevation-z0" style="font-size: 13px;line-height: 0px;letter-spacing: -0.2em;font-weight: 50;font-style: normal; appearance: none;">
   <br>
   <div class="p" role="main">
   <form #subscribeForm='ngForm' (ngSubmit)='subscribe(subscribeForm)'>
-
-      <mat-form-field>
-          <input matInput placeholder="First Name" required #firstName='ngModel' name='firstName'
-              [(ngModel)]='subscribeData.firstName'>
-          <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-              <div *ngIf="firstName">
-                  First name is required.
-              </div>
-          </mat-error>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-          <input matInput placeholder="Last Name" required #lastName='ngModel' name='lastName'
-              [(ngModel)]='subscribeData.lastName'>
-          <mat-error *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
-              <div *ngIf="lastName">
-                  Last name is required.
-              </div>
-          </mat-error>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-          <input pattern="\S+@\S+\.\S+" matInput placeholder="Email" required #email='ngModel' name='userName'
+    <mat-form-field>
+        <input pattern="\S+@\S+\.\S+" matInput placeholder="Email" required #email='ngModel' name='userName'
               [(ngModel)]='subscribeData.email'>
-          <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
-              <div *ngIf="email && email.valid && (email.dirty || email.touched)">
+        <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email && email.valid && (email.dirty || email.touched)">
                   Email is required.
-              </div>
-          </mat-error>
-      </mat-form-field >
-      <br>
-      <button mat-raised-button type='submit' style="font-size: 19px;line-height: 1.5;
-      letter-spacing: -0.061em;font-style: normal;font-weight: 500;">Subscribe</button>
+            </div>
+        </mat-error>
+    </mat-form-field >
+    <button mat-raised-button type='submit' style="font-size: 19px;line-height: 1.5;
+      letter-spacing: -0.061em;font-style: normal;font-weight: 500; margin-left: 20px; background-color: rgb(24, 21, 21); 
+      color: seashell;">Notify Me</button>
   </form>
   </div>
 </mat-card>
